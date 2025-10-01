@@ -992,6 +992,7 @@ class Step:
             response.step_type = StepType.STEP
             response.executor_type = self._executor_type
             response.executor_name = self.executor_name
+            response.metrics = self._extract_metrics_from_response(response)
             return response
 
         # Extract media from response

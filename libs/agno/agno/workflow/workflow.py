@@ -825,7 +825,9 @@ class Workflow:
 
             # Only collect metrics from steps that actually have metrics (actual agents/teams)
             if (
-                step_output.step_name and step_output.metrics and step_output.executor_type in ["agent", "team"]
+                step_output.step_name
+                and step_output.metrics
+                and step_output.executor_type in ["agent", "team", "function"]
             ):  # Only include actual executors
                 step_metrics = StepMetrics(
                     step_name=step_output.step_name,
